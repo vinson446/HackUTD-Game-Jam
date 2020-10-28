@@ -79,4 +79,14 @@ public class GameManager : MonoBehaviour
 
         IncreaseScore(false);
     }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void GoToGameSelect()
+    {
+        SceneManager.LoadScene("GameSelect");
+    }
 }

@@ -15,6 +15,7 @@ public class HauntedHouse : MonoBehaviour
     public TextMeshProUGUI[] answerTexts1;
     public TextMeshProUGUI[] answerTexts2;
     public TextMeshProUGUI[] answerTexts3;
+    public GameObject controlText;
 
     [Header("Camera")]
     [SerializeField] GameObject cam;

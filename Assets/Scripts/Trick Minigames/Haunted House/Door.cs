@@ -16,7 +16,7 @@ public class Door : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (hauntedHouse.CheckAnswer(slot))
+            if (hauntedHouse.CheckAnswer(slot) && hauntedHouse.correctQuestionsAnswered < 3)
             {
                 hauntedHouse.ShowQuestion();
                 hauntedHouse.TurnOnNextCam();

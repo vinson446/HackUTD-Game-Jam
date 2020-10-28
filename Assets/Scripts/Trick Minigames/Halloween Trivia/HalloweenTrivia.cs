@@ -8,6 +8,15 @@ public class HalloweenTrivia : MonoBehaviour
 {
     [Header("Game Settings")]
     public int selectedQuestionIndex;
+    public float timer = 10;
+    bool startGame;
+
+    [Header("UI Stuff")]
+    public GameObject introPanel;
+    public TextMeshProUGUI endText;
+    public Button[] buttons;
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI controlsText;
 
     // 5 questions per level (3 levels total)
     [Header("Questions")]
@@ -37,21 +46,36 @@ public class HalloweenTrivia : MonoBehaviour
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-
-        ShowQuestion();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (startGame)
         {
-            ShowQuestion();
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
+                timerText.text = Mathf.Round(timer).ToString();
+            }
+            else
+            {
+                Lose();
+            }
         }
+    }
+
+    public void Continue()
+    {
+        ShowQuestion();
     }
 
     void ShowQuestion()
     {
+        startGame = true;
+        introPanel.SetActive(false);
+        controlsText.gameObject.SetActive(false);
+
         selectedQuestionIndex = Random.Range(0, 5);
 
         // level 3
@@ -288,12 +312,25 @@ public class HalloweenTrivia : MonoBehaviour
 
     public void Win()
     {
-        print("Win");
+        startGame = false;
+
         gameManager.IncreaseTrickDifficulty();
+
+        introPanel.SetActive(true);
+        endText.text = "Correct!";
+        buttons[0].gameObject.SetActive(false);
+        buttons[1].gameObject.SetActive(true);
+        buttons[2].gameObject.SetActive(false);
     }
 
     public void Lose()
     {
-        print("Lose");
+        startGame = false;
+
+        introPanel.SetActive(true);
+        endText.text = "Wrong...YOU LOSE";
+        buttons[0].gameObject.SetActive(false);
+        buttons[1].gameObject.SetActive(false);
+        buttons[2].gameObject.SetActive(true);
     }
 }
