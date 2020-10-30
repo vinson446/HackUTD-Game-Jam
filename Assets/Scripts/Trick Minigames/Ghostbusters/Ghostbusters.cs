@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Ghostbusters : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Ghostbusters : MonoBehaviour
 
     [Header("UI")]
     public GameObject introPanel;
+    public GameObject endPanel;
     public TextMeshProUGUI introText;
     public GameObject controlText;
     public TextMeshProUGUI endEndText;
@@ -191,9 +193,23 @@ public class Ghostbusters : MonoBehaviour
         controlText.SetActive(false);
         endText.gameObject.SetActive(false);
 
+        endPanel.SetActive(true);
         endEndText.gameObject.SetActive(true);
         endEndText.text = "Correct!";
         levelButton.SetActive(true);
+    }
+
+    public void GoWin()
+    {
+        print("Win");
+        gameManager.IncreaseTrickDifficulty();
+        SceneManager.LoadScene("GameSelect");
+    }
+
+    public void GoLose()
+    {
+        print("Lose");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Lose()
@@ -202,6 +218,7 @@ public class Ghostbusters : MonoBehaviour
         controlText.SetActive(false);
         endText.gameObject.SetActive(false);
 
+        endPanel.SetActive(true);
         endEndText.gameObject.SetActive(true);
         endEndText.text = "Wrong...YOU LOSE";
         menuButton.SetActive(true);

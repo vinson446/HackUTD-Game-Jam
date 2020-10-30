@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class HalloweenTrivia : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class HalloweenTrivia : MonoBehaviour
 
     [Header("UI Stuff")]
     public GameObject introPanel;
+    public GameObject endPanel;
     public TextMeshProUGUI endText;
     public Button[] buttons;
     public TextMeshProUGUI timerText;
@@ -316,18 +318,28 @@ public class HalloweenTrivia : MonoBehaviour
 
         gameManager.IncreaseTrickDifficulty();
 
-        introPanel.SetActive(true);
+        endPanel.SetActive(true);
         endText.text = "Correct!";
         buttons[0].gameObject.SetActive(false);
         buttons[1].gameObject.SetActive(true);
         buttons[2].gameObject.SetActive(false);
     }
 
+    public void GoToGameSelect()
+    {
+        SceneManager.LoadScene("GameSelect");
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void Lose()
     {
         startGame = false;
 
-        introPanel.SetActive(true);
+        endPanel.SetActive(true);
         endText.text = "Wrong...YOU LOSE";
         buttons[0].gameObject.SetActive(false);
         buttons[1].gameObject.SetActive(false);

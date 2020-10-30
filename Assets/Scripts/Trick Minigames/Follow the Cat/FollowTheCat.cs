@@ -27,6 +27,7 @@ public class FollowTheCat : MonoBehaviour
     [Header("UI References")]
     public GameObject[] hatButtons;
     public GameObject introPanel;
+    public GameObject endPanel;
     public TextMeshProUGUI endText;
     public GameObject[] buttons;
 
@@ -285,7 +286,7 @@ public class FollowTheCat : MonoBehaviour
         print("Win");
         gameManager.IncreaseTrickDifficulty();
 
-        introPanel.SetActive(true);
+        endPanel.SetActive(true);
         endText.text = "Correct!";
 
         buttons[0].SetActive(false);
@@ -293,9 +294,19 @@ public class FollowTheCat : MonoBehaviour
         buttons[2].SetActive(false);
     }
 
+    public void GoToGameSelect()
+    {
+        SceneManager.LoadScene("GameSelect");
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void Lose()
     {
-        introPanel.SetActive(true);
+        endPanel.SetActive(true);
         endText.text = "Wrong...YOU LOSE";
 
         buttons[0].SetActive(false);

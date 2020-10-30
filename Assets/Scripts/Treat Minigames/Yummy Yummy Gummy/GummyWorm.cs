@@ -7,9 +7,12 @@ public class GummyWorm : MonoBehaviour
     public bool flyToMouth;
     public Transform endTranform;
 
+    YummyYummyGummy gummyManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        gummyManager = FindObjectOfType<YummyYummyGummy>();
         endTranform = GameObject.FindGameObjectWithTag("mouth").transform;
     }
 
@@ -25,6 +28,9 @@ public class GummyWorm : MonoBehaviour
             }
             else
             {
+                flyToMouth = false;
+                gummyManager.isEating = false;
+
                 Destroy(gameObject);
             }
         }

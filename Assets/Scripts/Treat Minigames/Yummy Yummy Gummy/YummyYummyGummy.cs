@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class YummyYummyGummy : MonoBehaviour
 {
     public GameObject introPanel;
+    public GameObject endPanel;
 
     public bool gameIsIn;
     public bool momTurning;
@@ -12,10 +16,21 @@ public class YummyYummyGummy : MonoBehaviour
     public int gummysPickedUp;
     public int numGummyWorms;
     public float turnTimer;
+    public bool isEating;
+
+    public float warningTime;
 
     [Header("Animation")]
-
     public Animator animator;
+
+    [Header("UI")]
+    public Image warningImage;
+    public Sprite warningSprite;
+    public Sprite angrySprite;
+
+    public TextMeshProUGUI endText;
+    public GameObject winButton;
+    public GameObject loseButton;
 
     [Header("References")]
     public GameObject[] gummyWorms;
@@ -49,18 +64,27 @@ public class YummyYummyGummy : MonoBehaviour
                 {
                     if (hit.transform.tag == "YummyGummy")
                     {
-                        gummysPickedUp++;
-
                         GummyWorm gummy = hit.transform.gameObject.GetComponent<GummyWorm>();
+                        if (!gummy.flyToMouth)
+                            gummysPickedUp++;
                         gummy.flyToMouth = true;
+                        isEating = true;
                     }
                 }
+            }
+
+            if (gummysPickedUp >= numGummyWorms)
+            {
+                Win();
             }
         }
 
         if (momTurning)
         {
             mom.transform.localRotation = Quaternion.Slerp(mom.transform.rotation, endMomRot.rotation, 0.2f);
+
+            if (isEating)
+                AngryMom();
         }
         else
         {
@@ -111,11 +135,11 @@ public class YummyYummyGummy : MonoBehaviour
     {
         if (gameManager.treatDifficulty >= 50)
         {
-            turnTimer = 1;
+            turnTimer = 3;
         }
         else if (gameManager.treatDifficulty >= 15)
         {
-            turnTimer = 3;
+            turnTimer = 4;
         }
         else if (gameManager.treatDifficulty >= 0)
         {
@@ -135,17 +159,84 @@ public class YummyYummyGummy : MonoBehaviour
 
     IEnumerator TurnMom()
     {
+        if (gameIsIn)
+        {
+            warningImage.gameObject.SetActive(true);
+            warningImage.sprite = warningSprite;
+
+            if (gameManager.treatDifficulty >= 50)
+            {
+                warningTime = 0.75f;
+            }
+            else if (gameManager.treatDifficulty >= 15)
+            {
+                warningTime = 1f;
+            }
+            else if (gameManager.treatDifficulty >= 0)
+            {
+                warningTime = 1.25f;
+            }
+        }
+
+        yield return new WaitForSeconds(warningTime);
+
+        warningImage.gameObject.SetActive(false);
+
         momTurning = true;
         animator.CrossFadeInFixedTime("turn", 0.2f);
 
         yield return new WaitForSeconds(1.25f);
 
-        IdleMom();
+        if (gameIsIn)
+            IdleMom();
     }
 
     void IdleMom()
     {
         momTurning = false;
         animator.CrossFadeInFixedTime("idle", 0.2f);
+        warningImage.gameObject.SetActive(false);
+    }
+
+    void AngryMom()
+    {
+        animator.CrossFadeInFixedTime("caught", 0.2f);
+
+        warningImage.gameObject.SetActive(true);
+        warningImage.sprite = angrySprite;
+
+        StartCoroutine(Lose());
+    }
+
+    void Win()
+    {
+        gameIsIn = false;
+
+        endPanel.SetActive(true);
+        endText.fontSize = 90;
+        endText.text = "Great work!";
+        winButton.SetActive(true);
+    }
+
+    IEnumerator Lose()
+    {
+        gameIsIn = false;
+
+        yield return new WaitForSeconds(2);
+
+        animator.enabled = false;
+        endPanel.SetActive(true);
+        endText.text = "Oooh you are in troubleee...\nYOU LOSE";
+        loseButton.SetActive(true);
+    }
+    
+    public void GoToGameSelect()
+    {
+        SceneManager.LoadScene("GameSelect");
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
