@@ -40,7 +40,7 @@ public class GameSelectManager : MonoBehaviour
             gameManager.previousTrickGameIndex = gameManager.trickIndex;
             while (gameManager.trickIndex == gameManager.previousTrickGameIndex)
             {
-                gameManager.trickIndex = Random.Range(0, 4);
+                gameManager.trickIndex = Random.Range(0, 3);
             }
         }
         // if TREAT was picked, dont change TRICK
@@ -49,7 +49,7 @@ public class GameSelectManager : MonoBehaviour
             gameManager.previousTreatGameIndex = gameManager.treatIndex;
             while (gameManager.treatIndex == gameManager.previousTreatGameIndex)
             {
-                gameManager.treatIndex = Random.Range(0, 4);
+                gameManager.treatIndex = Random.Range(0, 3);
             }
         }
     }

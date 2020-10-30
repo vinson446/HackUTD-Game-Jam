@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GameSelect.unity
     guid: 93b74ea6187095140b221c974712bdb0
   - enabled: 1
-    path: Assets/Scenes/Trick Minigames/Follow The Cat.unity
+    path: Assets/Scenes/Trick Minigames/Cat in the Hat.unity
     guid: 31faab5d73713764fb668691fd253493
   - enabled: 1
     path: Assets/Scenes/Trick Minigames/Ghostbusters.unity
@@ -20,12 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Trick Minigames/Halloween Trivia.unity
     guid: f871a6c2f21cd2b478623cdcf957eb46
-  - enabled: 1
-    path: Assets/Scenes/Trick Minigames/Haunted House.unity
-    guid: 55d330d8f7f2d1f41aff277d0aeb856c
-  - enabled: 1
-    path: Assets/Scenes/Treat Minigames/Candy Grab.unity
-    guid: fb331b9e09924a3428499bb3b6e3d6e6
   - enabled: 1
     path: Assets/Scenes/Treat Minigames/Door Dash.unity
     guid: 67b466304234b18469016fc611de4705

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7507928518704841715}
+  - component: {fileID: 3110152045179599006}
   - component: {fileID: 5689132526726967748}
   - component: {fileID: 3487672753345732976}
   - component: {fileID: 1951351797854355872}
@@ -33,6 +34,21 @@ Transform:
   m_Father: {fileID: 6112163152862380126}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3110152045179599006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3607953062374245038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ed7e4a316407b4aa2d6a8661142fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinata: {fileID: 0}
+  spawn: {fileID: 0}
+  canSmackAgain: 1
 --- !u!33 &5689132526726967748
 MeshFilter:
   m_ObjectHideFlags: 0

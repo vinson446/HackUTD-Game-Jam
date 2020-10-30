@@ -478,14 +478,12 @@ MonoBehaviour:
   treatText: {fileID: 388072309}
   trickSceneNames:
   - Halloween Trivia
-  - Haunted House
-  - Follow The Cat
   - Ghostbusters
+  - Cat in the Hat
   treatSceneNames:
   - Yummy Yummy Gummy
-  - Candy Grab
-  - Pinata
   - Door Dash
+  - Pinata
   trickImages:
   - {fileID: 1590253102}
   - {fileID: 958812573}
