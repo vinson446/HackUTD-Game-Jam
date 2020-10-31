@@ -42,12 +42,6 @@ public class GameManager : MonoBehaviour
         {
             Application.Quit();
         }
-
-        // TODO- REMOVE
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            SceneManager.LoadScene("GameSelect");
-        }
     }
 
     public void IncreaseScore(bool trickGame)

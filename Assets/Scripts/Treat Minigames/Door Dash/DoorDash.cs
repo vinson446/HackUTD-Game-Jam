@@ -174,5 +174,6 @@ public class DoorDash : MonoBehaviour
         winButton.SetActive(true);
         endPanel.SetActive(true);
         endText.text = "You made it just in the nick of time. The customer thanks you considerably for your efforts.";
+        gameManager.IncreaseTreatDifficulty();
     }
 }

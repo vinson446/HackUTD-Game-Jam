@@ -19,6 +19,9 @@ public class Pinata : MonoBehaviour
     public GameObject[] spawnTrans;
 
     [Header("UI")]
+    public TextMeshProUGUI endText;
+    public GameObject winButton;
+    public GameObject loseButton;
     public GameObject introPanel;
     public GameObject gamePanel;
     public GameObject finishPanel;
@@ -90,6 +93,18 @@ public class Pinata : MonoBehaviour
         {
             spawnTrans[i].SetActive(false);
         }
+
+        finishPanel.SetActive(true);
+        if (candies >= candiesNeeded)
+        {
+            endText.text = "Good job!";
+            winButton.SetActive(true);
+        }
+        else
+        {
+            endText.text = "Better luck next time...YOU LOSE";
+            loseButton.SetActive(true);
+        }
     }
 
     void Win()
@@ -101,6 +116,16 @@ public class Pinata : MonoBehaviour
     void Lose()
     {
         print("Lose");
+    }
+
+    public void GoToGameSelect()
+    {
+        SceneManager.LoadScene("GameSelect");
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void IncreaseCandyCount()

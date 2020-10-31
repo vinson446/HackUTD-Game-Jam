@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 6447461235522874558}
   - component: {fileID: 3523935691749640447}
   - component: {fileID: 65203265753367743}
+  - component: {fileID: 6639228716511533714}
+  - component: {fileID: 2033935446946725306}
+  - component: {fileID: 399223292306531281}
+  - component: {fileID: 5257971016783551488}
   m_Layer: 0
   m_Name: ghost
   m_TagString: Untagged
@@ -89,11 +93,65 @@ MeshCollider:
   m_GameObject: {fileID: 340235477958017861}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8033846184655501357, guid: d151678f62479cb4492fd910e7f15f4c, type: 3}
+--- !u!136 &6639228716511533714
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340235477958017861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 128.86891
+  m_Height: 266.32965
+  m_Direction: 1
+  m_Center: {x: -0.07569885, y: 134.17722, z: -48.296677}
+--- !u!114 &2033935446946725306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340235477958017861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8916d8b10789e143a35ea238dae9a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &399223292306531281
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340235477958017861}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!75 &5257971016783551488
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340235477958017861}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!1 &392442203915664797
 GameObject:
   m_ObjectHideFlags: 0

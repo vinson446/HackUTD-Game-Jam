@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 126432673699329370}
   m_Layer: 0
   m_Name: yummyGummy_gummy_orangeSkin
-  m_TagString: Untagged
+  m_TagString: YummyGummy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,10 +42,11 @@ GameObject:
   - component: {fileID: 2776603226097409164}
   - component: {fileID: 8743906554227084083}
   - component: {fileID: 1343359956537800999}
-  - component: {fileID: 682148337476762449}
+  - component: {fileID: 8578983370971798912}
+  - component: {fileID: 6005355706676602210}
   m_Layer: 0
   m_Name: gummyWorm
-  m_TagString: Untagged
+  m_TagString: YummyGummy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,17 +112,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &682148337476762449
-MeshCollider:
+--- !u!136 &8578983370971798912
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3636261284518093683}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4760660299813835457, guid: 0354685822423ed4584fd08f3ffbb460, type: 3}
+  m_Radius: 22.542679
+  m_Height: 12.292725
+  m_Direction: 1
+  m_Center: {x: -0.30056763, y: 0.09379578, z: 0.17381287}
+--- !u!114 &6005355706676602210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636261284518093683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e21b3abcc09d960408f298ce8d64f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flyToMouth: 0
+  endTranform: {fileID: 0}

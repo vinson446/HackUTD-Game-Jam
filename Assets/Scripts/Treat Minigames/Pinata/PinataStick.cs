@@ -35,43 +35,43 @@ public class PinataStick : MonoBehaviour
             // left side
             if (Input.mousePosition.x > Screen.width * 7 / 8)
             {
-                z1 = -75;
-                z2 = -90;
+                z1 = 75;
+                z2 = 90;
             }
             else if (Input.mousePosition.x > Screen.width * 3 / 4)
-            {
-                z1 = -50;
-                z2 = -75;
-            }
-            else if (Input.mousePosition.x > Screen.width * 5 / 8)
-            {
-                z1 = -35;
-                z2 = -50;
-            }
-            else if (Input.mousePosition.x > Screen.width / 2)
-            {
-                z1 = -10;
-                z2 = -35;
-            }
-            else if (Input.mousePosition.x > Screen.width * 3 / 8)
-            {
-                z1 = 10;
-                z2 = 35;
-            }
-            else if (Input.mousePosition.x > Screen.width / 4)
-            {
-                z1 = 35;
-                z2 = 50;
-            }
-            else if (Input.mousePosition.x > Screen.width / 8)
             {
                 z1 = 50;
                 z2 = 75;
             }
+            else if (Input.mousePosition.x > Screen.width * 5 / 8)
+            {
+                z1 = 35;
+                z2 = 50;
+            }
+            else if (Input.mousePosition.x > Screen.width / 2)
+            {
+                z1 = 10;
+                z2 = 35;
+            }
+            else if (Input.mousePosition.x > Screen.width * 3 / 8)
+            {
+                z1 = -10;
+                z2 = -35;
+            }
+            else if (Input.mousePosition.x > Screen.width / 4)
+            {
+                z1 = -35;
+                z2 = -50;
+            }
+            else if (Input.mousePosition.x > Screen.width / 8)
+            {
+                z1 = -50;
+                z2 = -75;
+            }
             else
             {
-                z1 = 75;
-                z2 = 90;
+                z1 = -75;
+                z2 = -90;
             }
 
             StartCoroutine(Smack());

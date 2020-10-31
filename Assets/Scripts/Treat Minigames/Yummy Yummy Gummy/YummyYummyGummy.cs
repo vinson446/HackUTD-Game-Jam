@@ -64,7 +64,7 @@ public class YummyYummyGummy : MonoBehaviour
                 {
                     if (hit.transform.tag == "YummyGummy")
                     {
-                        GummyWorm gummy = hit.transform.gameObject.GetComponent<GummyWorm>();
+                        GummyWorm gummy = hit.transform.gameObject.GetComponentInChildren<GummyWorm>();
                         if (!gummy.flyToMouth)
                             gummysPickedUp++;
                         gummy.flyToMouth = true;
@@ -216,6 +216,8 @@ public class YummyYummyGummy : MonoBehaviour
         endText.fontSize = 90;
         endText.text = "Great work!";
         winButton.SetActive(true);
+
+        gameManager.IncreaseTreatDifficulty();
     }
 
     IEnumerator Lose()

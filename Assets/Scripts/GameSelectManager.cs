@@ -16,8 +16,11 @@ public class GameSelectManager : MonoBehaviour
     [Header("Game Select Settings")]
     public string[] trickSceneNames;
     public string[] treatSceneNames;
-    public Image[] trickImages;
-    public Image[] treatImages;
+    public Sprite[] trickImages;
+    public Sprite[] treatImages;
+
+    public Image trick;
+    public Image treat;
 
     GameManager gameManager;
 
@@ -56,11 +59,11 @@ public class GameSelectManager : MonoBehaviour
 
     void ShowMiniGameFrontend()
     {
-        trickText.text = trickSceneNames[gameManager.trickIndex];
-        treatText.text = treatSceneNames[gameManager.treatIndex];
+        trickText.text = "Trick Score: " + gameManager.trickDifficulty.ToString();
+        treatText.text = "Treat Score: " + gameManager.treatDifficulty.ToString();
 
-        trickImage = trickImages[gameManager.trickIndex];
-        treatImage = treatImages[gameManager.treatIndex];
+        trickImage.sprite = trickImages[gameManager.trickIndex];
+        treatImage.sprite = treatImages[gameManager.treatIndex];
     }
 
     public void GoToMenu()

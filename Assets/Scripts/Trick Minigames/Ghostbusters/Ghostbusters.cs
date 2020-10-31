@@ -132,11 +132,11 @@ public class Ghostbusters : MonoBehaviour
             
             if (leftRight == 0)
             {
-                ghost.GetComponent<ConstantForce>().force = new Vector3(Random.Range(5, 15), 0, 0);
+                ghost.GetComponentInChildren<ConstantForce>().force = new Vector3(Random.Range(5, 15), 0, 0);
             }
             else
             {
-                ghost.GetComponent<ConstantForce>().force = new Vector3(Random.Range(-5, -15), 0, 0);
+                ghost.GetComponentInChildren<ConstantForce>().force = new Vector3(Random.Range(-5, -15), 0, 0);
             }
 
             ghostColors[colorIndex] += 1;
