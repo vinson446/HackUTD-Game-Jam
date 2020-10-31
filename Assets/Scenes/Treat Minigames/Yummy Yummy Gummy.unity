@@ -2220,8 +2220,8 @@ MonoBehaviour:
   warningTime: 0
   animator: {fileID: 2103573593}
   warningImage: {fileID: 221596765}
-  warningSprite: {fileID: 21300000, guid: 1edf4bbfa277ef14fbc009e082240ed3, type: 3}
-  angrySprite: {fileID: 21300000, guid: 25320e3777380a24bba8f051e25068f2, type: 3}
+  warningSprite: {fileID: 21300000, guid: 4c4a771d5326f184183f5e77df814f9e, type: 3}
+  angrySprite: {fileID: 21300000, guid: 0db1daa888055954d9d5e2aef4ba18e6, type: 3}
   endText: {fileID: 1001043633}
   winButton: {fileID: 1831406321}
   loseButton: {fileID: 2103808148}

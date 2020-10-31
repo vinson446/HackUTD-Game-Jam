@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 989e5b1be2879ce4e9b76adf3d0f7168
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Halloween
+  fontNames:
+  - Halloween
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3b3a1f41676652d44b620aca49b3dd1e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
